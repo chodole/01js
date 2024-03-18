@@ -1,0 +1,33 @@
+<script>
+
+    /*
+		[문제] 
+			철수는 색종이를 20장 가지고있다.
+			영희는 색종이를 14장 가지고있다.
+			민수는 색종이를 6장 가지고있다.
+			세학생의 색종이를 전부 합친다.
+			
+			[1] 색종이를 3사람이 똑같은 개수로 나눠가지면 
+			    총 몇 장을 가질 수 있는지 구하시오.		
+			[2] 위에서 나눠주고 난 나머지는 얼마인지 구하시오.
+		[정답] 
+			[1] 13
+			[2] 1
+	 */
+
+
+     let chul = 20;
+     let young = 14;
+     let minsu = 6;
+
+     let all = chul + young + minsu;
+
+     let one = parseInt(all / 3);
+     let last = all % 3 ;
+
+     document.write(one);
+     document.write("<br> <hr>");
+     document.write(last);
+	
+	 
+</script>

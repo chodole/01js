@@ -1,0 +1,46 @@
+<script>
+
+    /*
+       [문제] 
+           국어 1등 의 학생정보를 출력하시오.
+           함수로 만드시오.
+       [정답]         	
+           num : 1003
+           name : 이상아
+           math : 15
+           eng : 10
+           kor : 50
+   */
+
+   function check(student){
+        let max = 0;
+        let index =0;
+
+        for(let i=0;i<student.length;i++){
+            if(max < student[i]["kor"]){
+                max = student[i]["kor"];
+                index = i;
+            }
+        }
+
+        let keyList = Object.keys(student[index]);
+        for(let i=0;i<keyList.length;i++){
+            let key = keyList[i];
+            document.write(key+" : "+student[index][key]+"<br>");
+        }
+   }
+  
+   
+   let student = [
+       {"num" : 1001, "name" : "김철수", "math" : 10, "eng" : 20, "kor" : 30},
+       {"num" : 1002, "name" : "박민정", "math" : 40, "eng" : 60, "kor" : 10},
+       {"num" : 1003, "name" : "이상아", "math" : 15, "eng" : 10, "kor" : 50},
+       {"num" : 1004, "name" : "조민수", "math" : 16, "eng" : 40, "kor" : 20}
+   ];
+
+   check(student);
+
+  
+
+   
+</script>

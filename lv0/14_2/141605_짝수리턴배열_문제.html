@@ -1,0 +1,36 @@
+<script>
+
+	/*
+		[문제]	
+  			랜덤숫자(10~30) 사이의 변수 두개를 저장한다.
+	  		두숫자사이의 짝수만 저장해서 리턴하는 함수 를 만드시오.
+	*/
+
+	
+    function getEven(a,b){
+        let arr=[];
+
+        if(a>b){
+            let temp = a;
+            a = b;
+            b = temp;
+        }
+
+        for(let i=a;i<=b;i++){
+            if(i%2==0){
+                arr.push(i);
+            }
+        }
+
+        return arr;
+    }
+
+    let r1 = parseInt(Math.random()*21)+10;
+    let r2 = parseInt(Math.random()*21)+10;
+    let c = getEven(r1,r2);
+
+    document.write(r1+" "+r2+"<br>"+c);
+
+
+
+</script>

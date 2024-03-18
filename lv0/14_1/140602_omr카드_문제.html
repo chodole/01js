@@ -1,0 +1,40 @@
+<script> 
+   
+    /*
+        [문제]
+            omr배열은 정답이다.
+            me배열에 랜덤숫자(1~4)를 5개 저장 후,
+            omr과 비교하여 아래와 같이 출력하는 함수를 만드시오. 
+        [예시]
+            omr = 1,4,3,2,1
+            me = 1,2,3,3,2
+            ox = o,x,o,x,x
+    */
+
+   
+    function check(a,b,c){
+        for(let i=0;i<a.length;i++){
+            if(a[i] == b[i]){
+                c.push("o");
+            }else {
+                c.push("x");
+            }
+        }
+
+    }
+
+
+    let omr = [1, 4, 3, 2, 1];  
+    let me = [];
+    let ox = [];
+
+    for(let i=0;i<5;i++){
+        let r = parseInt(Math.random()*4)+1;
+        me.push(r);
+    }
+
+    document.write(omr+"<br>"+me+"<br>");
+    check(omr,me,ox);
+    document.write(ox);
+  
+</script>

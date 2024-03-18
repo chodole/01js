@@ -1,0 +1,58 @@
+<script>
+
+    /*
+        [문제]
+            apt배열은 아파트 1동의 각 세대를 의미한다.
+            pay배열은 이번달 관리비를 뜻한다.    
+            아래 문제를 잘 읽고 정답을 구하시오.
+    */
+
+    let apt = [
+		[101, 102, 103],	
+		[201, 202, 203],	
+		[301, 302, 303]		
+	];
+
+    let pay = [
+        [1000, 2100, 1300],	 
+        [4100, 2000, 1000],	 
+        [3000, 1600,  800]  
+    ];
+
+  
+    /*
+        [문제] 
+            관리비가 가장 많이 나온 집, 가장 적게 나온 집을 출력하시오.
+        [정답]
+            가장 많이 나온 집 = 201
+            가장 적게 나온 집 = 303        
+    */
+
+    let max=0;
+    let maxX=0;
+    let maxY=0;
+
+    let min=5000;
+    let minX=0;
+    let minY=0;
+
+    for(let i=0;i<3;i++){
+        for(let j=0;j<3;j++){
+            if(max<pay[i][j]){
+                max=pay[i][j];
+                maxX=i;
+                maxY=j;
+            }
+            if(min>pay[i][j]){
+                min=pay[i][j];
+                minX=i;
+                minY=j;
+            }
+        }
+    }
+
+    document.write("가장 많이 나온 집 ="+apt[maxX][maxY]+"<br>");
+    document.write("가장 적게 나온 집 ="+apt[minX][minY]);
+    
+
+</script>

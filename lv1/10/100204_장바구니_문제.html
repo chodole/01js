@@ -1,0 +1,85 @@
+<script>
+
+    /*
+    	[문제1]
+			회원별로 아이템 구매목록을 출력하시오.
+		[정답1]
+			[이만수 ==> 고래밥3,칸쵸1] 
+			[김철민 ==> 고래밥1] 
+			[이영희 ==> 고래밥1,새우깡2]
+		
+		[문제2]
+			아이템별로 판매개수를 출력하시오.
+		[정답2]
+			[고래밥 ==> 5][새우깡 ==> 2][칸쵸 ==> 1]
+    */
+
+    function getcartList(arr){
+        let temp1 = arr.split("\n");
+        let cartList = [];
+
+        for(let i=0;i<temp1.length;i++){
+            let temp2 = temp1[i].split("/");
+
+            cartList.push(temp2);
+        }
+
+        return cartList;
+    }
+
+    function getItemList(arr){
+        let itemList = [];
+        let temp1 = arr.split(",");
+
+        for(let i=0;i<temp1.length;i++){
+            let temp = temp1[i].split("/");
+            itemList.push(temp);
+        }
+
+        return itemList;
+    }
+
+    function getOrderList(item,cart){
+        let cartList = [];
+
+        for(let i=0;i<itemList.length;i++){
+            let temp = [];
+            temp.push(item[i][1]);
+
+            let count = 0;
+
+            for(let j=0;j<cart.length;j++){
+                if(item[i][0] == cart[j][1]){
+                    count++;
+                }
+            }
+
+            temp.push(count);
+            cartList.push(temp);
+        }
+
+        for(let i=0;i<cartList.length;i++){
+            document.write(cartList[i]+"<br>");
+        }
+        
+    }
+
+	let itemData = "1001/고래밥,1002/새우깡,1003/칸쵸";
+	let userData = "3001/이만수,3002/김철민,3003/이영희";
+	
+	let cartData = "";
+	cartData += "3001/1001\n";
+	cartData += "3001/1001\n";
+	cartData += "3003/1002\n";
+	cartData += "3001/1001\n";
+	cartData += "3001/1003\n";
+	cartData += "3003/1002\n";
+	cartData += "3003/1001\n";
+	cartData += "3002/1001\n";
+
+    let cartList = getcartList(cartData);
+    let itemList = getItemList(itemData);
+
+    getOrderList(itemList,cartList);
+
+  </script>

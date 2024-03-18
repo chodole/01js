@@ -1,0 +1,118 @@
+<script>
+
+    /*
+        [문제]
+            아래와 같이 출력하시오.    
+    */
+
+    /*
+        [문제1]
+            11112
+            11122
+            11222
+            12222    
+    */
+
+    for(let i=4;i>0;i--){
+        for(let j=0;j<5;j++){
+            if(i>j){
+                document.write("1");
+            }else {
+                document.write("2");
+            }
+        }
+        document.write("<br>");
+    }
+
+    document.write("<br><br>");
+    /*
+        [문제2]
+            12222
+            11222
+            11122
+            11112   
+    */ 
+    for(let i=0;i<4;i++){
+        for(let j=0;j<5;j++){
+            if(i>=j){
+                document.write("1");
+            }else {
+                document.write("2");
+            }
+        }
+        document.write("<br>");
+    }
+
+    document.write("<br><br>");
+   
+    /*
+        [문제3]
+            11211
+            12221	
+            22222
+    */  
+
+    for(let i=0;i<3;i++){
+        for(let j=0;j<5;j++){
+            let mid = parseInt(5/2);
+            let rs1 = mid+i;
+            let rs2 = mid-i;
+
+            if(j<=rs1 && j>=rs2){
+                document.write("2");
+            }else {
+                document.write("1");
+            }
+        }
+        document.write("<br>");
+    }
+
+    document.write("<br><br>");
+
+    /*
+        [문제4]
+              2
+             222
+            22222
+    */  
+
+    for(let i=0;i<3;i++){
+        for(let j=0;j<5;j++){
+            let mid = parseInt(5/2);
+            let rs1 = mid+i;
+            let rs2 = mid-i;
+
+            if(j<=rs1 && j>=rs2){
+                document.write("2");
+            }else {
+                document.write(" &nbsp ");
+            }
+        }
+        document.write("<br>");
+    }
+
+    document.write("<br><br>");
+
+    /*
+        [문제5]
+            22222
+             222
+              2 
+    */      
+
+    for(let i=2;i>=0;i--){
+        for(let j=0;j<5;j++){
+            let mid = parseInt(5/2);
+            let rs1 = mid+i;
+            let rs2 = mid-i;
+
+            if(j<=rs1 && j>=rs2){
+                document.write("2");
+            }else {
+                document.write(" &nbsp ");
+            }
+        }
+        document.write("<br>");
+    }
+
+</script>

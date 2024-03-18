@@ -1,0 +1,22 @@
+<script>
+
+    /*
+        [문제]
+            a 변수에 1부터 10 사이의 랜덤 숫자를 저장하고, 
+            "짝수" 또는 "홀수"를 출력하시오.
+    */
+
+    
+    function jjack(a){
+        if(a%2==0){
+            document.write("짝수");
+        }else{
+            document.write("홀수");
+        }
+    }
+
+    let r = parseInt(Math.random() * 10)+1;
+    document.write(r+"<br>");
+    jjack(r);
+
+</script>

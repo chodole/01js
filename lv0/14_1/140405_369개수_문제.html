@@ -1,0 +1,39 @@
+<script>
+
+    /*
+        [문제]
+            랜덤숫자 (10~99) 두개를 입력받고 그사이에 3 이나 6 이나 9의 개수를 출력하시오.
+            
+        [결과] 
+            1 2 짝 4 5 짝 7 8 짝 10 11 12 짝 ...    
+    */
+
+    function NumberCount(a,b){
+        if(a>b){
+            let temp = a;
+            a = b;
+            b = a;
+        }
+
+        let count =0;
+
+        for(let i=a;i<=b;i++){
+            let k = parseInt(i/10);
+            let m = i%10;
+
+            let rs1 = k==3 || k==6 || k==9;
+            let rs2 = m==3 || m==6 || m==9;
+
+            if(rs1) count++;
+            if(rs2) count++;
+        }
+
+        document.write(count);
+    }
+
+    let r1 = parseInt(Math.random()*90)+10;
+    let r2 = parseInt(Math.random()*90)+10;
+    document.write(r1+' '+r2+"<br>");
+    NumberCount(r1,r2);
+
+</script>

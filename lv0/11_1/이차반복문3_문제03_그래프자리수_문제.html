@@ -1,0 +1,37 @@
+<script>
+
+    /*
+        [문제] 
+            10~99 사이의 랜덤 숫자를 다섯 번 반복해서 저장하고,
+            각각의숫자의 자리수로 나눈다. 각각의 자리수의 합만큼 별을출력하시오.
+        [예시]
+            53,27,38,41,90
+            8=********
+            9=*********
+            11=***********
+            5=*****
+            9=*********
+    */
+   let arr = [];
+
+   for(let i =0;i<5;i++){
+        let r =parseInt(Math.random() * 90)+10;
+        arr.push(r);
+   }
+
+   document.write(arr+"<br>");
+
+   for(let i =0;i<arr.length;i++){
+        let a = parseInt(arr[i]/10);
+        let b = arr[i]%10;
+
+        let sum = a+b;
+        document.write(sum+" : ");
+
+        for(let j =0;j<sum;j++){
+            document.write("*");
+        }
+        document.write("<br>");
+   }
+   
+</script>

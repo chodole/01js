@@ -1,0 +1,82 @@
+<script>
+
+    /*
+        [문제]
+            아래 userData는 회원번호와 이름이고, 
+            pointData는 포인트와 회원번호이다.
+            포인트는 여러번 쌓을 수 있고, 
+            전부 누적해서 합을 구한다.
+            포인트 점수가 가장 높은 회원의 이름을 출력하시오.
+        [정답]
+            이만수 (3점으로 1002번이 가장 높으므로 정답)        
+    */
+
+    function getUserList(user){
+        let userList = [];
+
+        let temp = user.split(",");
+
+        for(let i=0;i<temp.length;i++){
+            let temp1 = temp[i].split("/");
+            userList.push(temp1);
+        }
+        return userList;
+    }
+
+    function getPointList(point){
+        let pointList = [];
+
+        let temp = point.split(",");
+
+        for(let i=0;i<temp.length;i++){
+            let temp1 = temp[i].split("/");
+            pointList.push(temp1);
+        }
+        return pointList;
+    }
+
+    function pointHigh(user,point){
+        let pointuser = [];
+
+        for(let i=0;i<user.length;i++){
+            let point1 = 0;
+
+            for(let j=0;j<point.length;j++){
+                if(user[i][0] == point[j][1]){
+                    point1 += Number(point[j][0]);
+                }
+            }
+            pointuser.push(point1);
+        }
+
+        let max = 0;
+        let index = 0;
+
+        for(let i=0;i<pointuser.length;i++){
+            if(max<pointuser[i]){
+                max = pointuser[i];
+                index = i;
+            }
+        }
+
+        return index;
+    }
+
+    let userData = "1001/김철수,";
+    userData += "1002/이만수,";
+    userData += "1003/이영희";
+
+    let pointData = "1/1001,";
+    pointData += "1/1002,";
+    pointData += "2/1003,";
+    pointData += "1/1001,";
+    pointData += "2/1002";   
+
+    let userList = getUserList(userData);
+    let pointList = getPointList(pointData);
+
+    let index = pointHigh(userList,pointList);
+
+    document.write(userList[index][1]);
+
+</script>

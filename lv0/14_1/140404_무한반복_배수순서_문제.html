@@ -1,0 +1,37 @@
+<script>
+	
+	/*
+		
+		[문제] 
+			랜덤숫자 (2~9) 사이의 숫자를 저장한다. 랜덤숫자는 구하려는 배수를 뜻한다.
+			랜덤숫자 (4~ 8) 사이의 숫자를 저장한다. 위 배수의 순서를 뜻한다.
+			랜덤숫자 의 배수를 출력하는데 그중에서 두번째 랜덤숫자의 순서의 배수만 출력한다.
+
+		[예시] 2의 배수의 6번째 배열을 출력한다.
+			2 6 		
+			12
+	*/
+
+    function basu(a,b){
+        let count = 0;
+        let i =1;
+        while(true){
+            if(i%a == 0){
+                count++;
+            }
+            if(count == 6){
+                document.write(i+"<br>");
+                break;
+            }
+            i++;
+        }
+    }
+
+
+    let r1 = parseInt(Math.random() * 8)+2;
+    let r2 = parseInt(Math.random() * 5)+4;
+    document.write(r1+" "+r2+"<br>");
+	basu(r1,r2);
+
+
+</script>

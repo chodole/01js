@@ -1,0 +1,29 @@
+<script>
+
+    /*
+        [문제]
+            1~100사이의 랜덤숫자를 입력하고 그약수를 출력하고, 전체 합을 구하시오.
+        [정답]
+            1 2 3 6 9 18 
+            합 = 39    
+    */
+
+
+    function yack(r){
+        let sum =0;
+        for(let i=0;i<=r;i++){
+            if(r%i==0){
+                sum += i;
+                document.write(i+" ");
+            }
+        }
+        document.write("<br>합 ="+sum);
+    }
+
+    let r = parseInt(Math.random()*100)+1;
+
+    yack(r);
+   
+
+
+</script>

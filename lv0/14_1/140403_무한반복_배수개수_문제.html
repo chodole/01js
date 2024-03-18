@@ -1,0 +1,42 @@
+<script>
+	
+	/*
+		
+		[문제] 
+			랜덤숫자 (2~9) 사이의 숫자를 저장한다. 랜덤숫자는 구하려는 배수를 뜻한다.
+			랜덤숫자 (4~ 8) 사이의 숫자를 저장한다. 위 배수의 개수를 뜻한다.
+			랜덤숫자 의 배수를 랜덤숫자의 개수만큼 구하시오.
+
+		[예시] 2의 배수를 6개 구하시오.
+			2 6 
+
+			2
+			4
+			6
+			8
+			10
+			12
+	*/
+
+    function basu(a,b){
+        let count = 0;
+        let i =1;
+        while(true){
+            if(i%a == 0){
+                document.write(i+"<br>");
+                count++;
+            }
+            if(count == 6){
+                break;
+            }
+            i++;
+        }
+    }
+
+
+    let r1 = parseInt(Math.random() * 8)+2;
+    let r2 = parseInt(Math.random() * 5)+4;
+    document.write(r1+" "+r2+"<br>");
+	basu(r1,r2);
+
+</script>

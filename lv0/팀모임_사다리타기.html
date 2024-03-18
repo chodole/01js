@@ -1,0 +1,82 @@
+<script>
+    /*
+        핀볼게임
+    
+    */
+
+    function ladderPrint(ladder,x,y,number,result){
+        for(let i=0;i<number.length;i++){
+            document.write("[ &nbsp;&nbsp;"+number[i]+"&nbsp;&nbsp; ] ")
+        }
+        document.write("<br>");
+        
+        for(let i=0;i<ladder.length;i++){
+            for(let j=0;j<ladder[i].length;j++){
+                if(x==j && y==i){
+                    document.write(" [ &nbsp;●&nbsp; ] ");
+                }else {
+                    document.write(" [ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ]")
+                }
+            }
+            document.write("<br>");
+        }
+
+        if(y==ladder.length){
+            for(let i=0;i<result.length;i++){
+                if(x==i){
+                    document.write(" [ &nbsp;●&nbsp; ] ");
+                }else{
+                    document.write(" ["+result[i]+"] ");
+                }
+            }
+        }else{
+            for(let i=0;i<result.length;i++){
+                document.write(" ["+result[i]+"] ");
+            }
+        }
+        
+        document.write("<br><br>");
+    }
+
+    let number = [1,2,3,4];
+    let result = ["만원","이만원","오천원","빵원"];
+    let ladder = [];
+
+
+    //게임판 세팅
+    for(let i=0;i<4;i++){
+        let temp = [];
+        for(let j=0;j<4;j++){
+            let ran = parseInt(Math.random()*3)-1;
+            if(j==0) ran = parseInt(Math.random()*2);
+            if(j==3) ran = parseInt(Math.random()*2)-1;
+            temp.push(ran);
+        }
+        ladder.push(temp);
+    }
+
+    //게임 시작
+    for(let i=0;i<number.length;i++){
+        let x = i;
+        let y = 0;
+
+        document.write(number[i]+" 시작 <br>");
+        ladderPrint(ladder,x,y,number,result);
+
+        while(true){
+            if(ladder[y][x]==-1){
+                x--;
+            }else if(ladder[y][x]==1){
+                x++;
+            }
+            y++;
+
+            ladderPrint(ladder,x,y,number,result);
+
+            if(y==ladder.length) break; 
+        }
+
+        document.write(number[i]+"는 "+result[x]+"을 내야한다<br><br><hr>");
+    }
+
+</script>

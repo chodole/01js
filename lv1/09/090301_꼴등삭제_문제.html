@@ -1,0 +1,38 @@
+<script>
+
+    /*
+        [문제]
+            아래 데이터에서 꼴등을 삭제 후
+            다시 하나의 문자열로 변경 후 출력하시오.
+        [정답]
+            str = 김철수/87,이영희/95
+    */
+
+    let str = "김철수/87,이만수/42,이영희/95";
+
+ 
+    let temp = str.split(",");
+    let min = 100;
+    let index =0;
+
+    for(let i=0;i<temp.length;i++){
+        let temp2 = temp[i].split("/");
+        if(min>temp2[1]){
+            min = temp2[1];
+            index = i;
+        }
+    }
+
+    temp.splice(index,1);
+
+    str = "";
+    for(let i=0;i<temp.length;i++){
+        str += temp[i];
+        if(i!=temp.length-1){
+            str +=",";
+        }
+    }
+
+    document.write(str);
+
+</script>

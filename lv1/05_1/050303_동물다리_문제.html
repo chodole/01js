@@ -1,0 +1,34 @@
+<script>
+
+    /*
+        [문제]
+            어느 농장에는 토끼와 오리가 모두 35마리가 있다. 
+            토끼와 오리의 다리의 수의 합이 96개일 때, 
+            토끼와 오리는 각각 몇마리 인지 구하시오.
+        [정답]
+            토끼 = 13마리
+            오리 = 22마리    
+    */
+   
+    let all = 35;
+
+    let sum = 96;
+
+    let run = true;
+
+    let rabbit = 0;
+    let duck = 35;
+    
+    while(run) {
+        if(rabbit*4 + duck*2 == sum) {
+            run = false;
+        } else {
+            rabbit ++;
+            duck --;
+        }
+    }
+
+    document.write("토끼 = "+rabbit);
+    document.write("<br>오리 = "+duck);
+
+</script>

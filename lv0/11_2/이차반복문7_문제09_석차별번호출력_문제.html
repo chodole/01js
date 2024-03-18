@@ -1,0 +1,27 @@
+<script>
+
+    /*
+        [문제]
+            석차와 번호를 출력하시오.
+        [정답]
+            1001 2
+            1002 3
+            1003 4
+            1004 1
+    */
+
+    let numList   = [1001, 1002, 1003, 1004];
+    let scoreList = [  87,   42,   11,   98];
+
+    for(let i =0;i<numList.length;i++){
+        document.write(numList[i]+" ");
+        let count=1;
+        for(let j =0;j<scoreList.length;j++){
+            if(scoreList[i]<scoreList[j]){
+                count++;
+            }
+        }
+        document.write(count+'<br>');
+    }
+
+</script>

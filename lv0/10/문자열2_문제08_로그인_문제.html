@@ -1,0 +1,41 @@
+<script>
+
+    /*
+        [문제]
+            철수는 웹사이트에 로그인을 하려고한다.
+            이 웹사이트는 대소문자를 구분하지않고, 로그인을 할수있다.       
+            
+            joinId 와 joinPw 는 철수가 이전에 가입한 아이디와 비밀번호이다.
+            아래 배열은 철수가 로그인을 시도한 아이디와 비밀번호 배열이다.
+            
+            철수가 로그인에 성공하면 "로그인성공" 
+            실패하면 "로그인실패" 를 출력하시오.
+            
+            
+        [정답]
+            평균 = 30.2
+            일등 점수 = 80
+    */
+
+    let joinId = "qwEr1234";
+    let joinPw = "aBcd1234";
+
+    let idList = ["QWER1" , "Wer1234" , "Qwer1234"];
+    let pwList = ["abc1234", "abcD1234" , "ABCD1234"];
+
+    joinId = joinId.toLowerCase();
+    joinPw = joinPw.toLowerCase();
+
+    for(let i =0;i<idList.length;i++){
+        id = idList[i].toLowerCase();
+        pw = pwList[i].toLowerCase();
+
+        if(id==joinId && pw==joinPw){
+            document.write("로그인성공<br>");
+        }else {
+            document.write("로그인실패<br>");
+        }
+    }
+
+
+ </script>

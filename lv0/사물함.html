@@ -1,0 +1,48 @@
+<script>
+   
+
+    function randomPosition(){
+        arr = [
+        "김민규" , "김성호" , "김윤정" , "문정원" ,
+        "박선재" , "박수린" , "박윤기" , "변진우" ,
+        "신다혜" , "신자민" , "오수경" , "우형일" , 
+        "유석범" , "유지은" , "윤단비" , "윤효근" , 
+        "이선재" , "이정한" , "이지선" , "임수빈" , 
+        "정선빈" , "정숙인" , "정원진" , "김승"
+        ] 
+
+        for(let i = 0; i < 1000; i++){
+            let r = Math.floor(Math.random() * 24);
+            console.log(r);
+            let temp = arr[r];
+            arr[r] = arr[0];
+            arr[0] = temp;
+        }
+        console.log(arr);
+
+        let table = document.querySelector('#table');
+
+        table.innerHTML = '';
+        
+        //console.log(table);
+        let tr = document.createElement('tr');
+        table.append(tr);
+        for(let i = 0; i < arr.length; i++){
+            let td = document.createElement('td');
+            td.innerText = arr[i];
+            tr.append(td);
+            if(i % 6 == 5){
+                tr = document.createElement('tr');
+                table.append(tr);
+            }
+        }
+    }
+</script>
+
+
+<div align="center">
+    <button onclick="randomPosition()">누르시오</button>
+    <table id="table" border="1">
+
+    </table>
+</div>

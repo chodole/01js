@@ -1,0 +1,28 @@
+<script>
+
+    /*
+        [문제]
+            [조건1] arr배열에 랜덤 숫자(1~100) 10개를 추가한다.
+            [조건2] 위 값 중 50보다 크면서 7의 배수만 출력하시오.
+        [예시]
+            87,90,85,55,46,20,63,7,70,8
+            63,70
+    */
+
+    let arr = [];
+    let result = [];
+
+    for(let i =1;i<=10;i++){
+        let a = parseInt(Math.random()*100)+1;
+        arr.push(a);
+        if(a%7==0 && a>50) {
+            result.push(a);
+        }
+    }
+
+    document.write(arr+"<br>");
+    document.write(result);
+   
+   
+
+</script>

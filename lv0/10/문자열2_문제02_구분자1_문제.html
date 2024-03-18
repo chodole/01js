@@ -1,0 +1,25 @@
+<script>
+
+    /*
+        [문제]
+            str의 내용을 / 기준으로 잘라서 배열에 저장한다.
+            단, 저장할때는 각각의 숫자의 두배를 저장한다.
+        [정답]
+            arr = 22,200,89
+    */
+
+    let str = "11/100/89";
+    let arr = [];
+
+    let token = str.split("/");
+
+    
+    for(let i =0;i<token.length;i++){
+        let a = Number(token[i]) * 2;
+
+        arr.push(a);
+    }
+
+    document.write(arr);
+   
+</script>

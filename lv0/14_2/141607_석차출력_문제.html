@@ -1,0 +1,33 @@
+<script>
+
+    /*
+        [문제]
+            scoreList는 학생시험점수배열이다. 
+            석차를 배열에 담아서 리턴하는함수를 만드시오.
+        [정답]
+            2 3 4 1 
+    */
+
+
+    function getRank(score){
+        let rankList=[];
+
+        for(let i=0;i<score.length;i++){
+            let rank = 1;
+            for(let j=0;j<score.length;j++){
+                if(score[i]<score[j]){
+                    rank++;
+                }
+            }
+            rankList.push(rank);
+        }
+
+        return rankList;
+    }
+
+    let scoreList = [  87,   42,   11,   98];
+
+    let rankList = getRank(scoreList);
+    document.write(rankList);
+    
+</script>

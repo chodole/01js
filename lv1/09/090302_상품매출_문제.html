@@ -1,0 +1,47 @@
+<script>
+
+    /*
+        [문제]
+            member는 회원목록이다. 번호와 아이디가 기록되어있다.
+            item은 쇼핑몰 판매상품이다. 상품이름과 가격이 기록되어있다.
+            order는 오늘 주문 목록이다. 주문한 회원아이디와 아이템이름 
+            그리고 주문개수가 기록되어있다. 
+            오늘의 매출을 출력하시오.
+        [정답]
+            33200    
+    */
+
+    let member = "qwer1234,pythongood,testid";
+    let item = "사과,1100/바나나,2000/딸기,4300";
+    let order = "qwer1234,사과,3/phthongood,바나나,2/qwer1234,딸기,5/testid,사과,4";
+
+    
+    item = item.split("/");
+    order = order.split("/");
+
+    let item2 = [];
+    let order2 = [];
+
+    for(let i=0;i<item.length;i++){
+        let temp = item[i].split(",");
+        item2.push(temp);
+    }
+    for(let i=0; i<order.length;i++){
+        let temp = order[i].split(",");
+        order2.push(temp);
+    }
+
+    let total =0;
+
+    for(let i=0;i<order2.length;i++){
+        for(let j=0;j<item2.length;j++){
+            if(item2[j][0] == order2[i][1]){
+                total += item2[j][1] * order2[i][2];
+            }
+        }
+    }
+
+    document.write(total);
+    
+
+</script>

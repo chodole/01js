@@ -1,0 +1,21 @@
+<script>
+
+	/*
+		[문제]
+			귤 6개의 무게는 840g, 사과 3개의 무게는 750g이다.
+			귤 5개의 무게가 사과 2개의 무게보다 무겁고,
+			귤 7개의 무게가 사과 4개의 무게보다 무거우면,
+			true를 출력하시오.
+		[정답]
+			false
+	*/
+
+    let orange = 840 / 6;
+    let apple = 750 / 3;
+
+    let a = orange * 5 > apple * 2;
+    let b = orange * 7 > apple * 4;
+
+    document.write(a&&b);
+
+</script>

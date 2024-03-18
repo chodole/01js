@@ -1,0 +1,23 @@
+<script>
+
+    /*
+        [맥스]
+            [1] 랜덤(1~10)숫자를 10번 반복해서 출력한다.
+            [2] 반복문이 종료후 가장작은수를 출력한다. 
+    */
+
+    let i =1;
+    let min = 100;
+
+    while(i<=10){
+        let a =parseInt(Math.random() * 10)+1;
+        document.write(a+" ");
+
+        if(min>a){
+            min = a;
+        }
+        i++;
+    }
+    document.write("<br> 가장 작은 수 ="+min);
+    
+</script>

@@ -1,0 +1,31 @@
+<script>
+
+    /*
+        [문제]
+            2000의 약수 중에서 순서대로 약수를 출력했을 때, 
+            [조건1] 백의자리가 4인 약수들만 출력하고, 
+            [조건2] 위 약수들의 개수를 출력하시오.
+        [정답]
+            400 
+            count = 1    
+    */
+
+    let i =1;
+    let count = 0;
+
+    while(i<=2000){
+        let a = parseInt(i%1000/100)
+        
+        if(2000%i==0){
+            if(a==4) {
+                document.write(i+"<br>");
+                count+=1;
+            }
+        }
+
+        i++;
+    }
+
+    document.write("count="+count);
+
+</script>

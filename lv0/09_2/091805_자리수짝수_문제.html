@@ -1,0 +1,30 @@
+<script>
+
+    /*
+        
+        [문제]
+            [조건1] arr배열에 10~99 사이의 랜덤숫자 3개를 추가한다.
+            [조건2] 그 각자리수가 전부 짝수이면 저장한다.
+        [예시]
+            arr = 20,28,22
+    */
+
+    let arr = [];
+    let count =0;
+
+    while(count<3) {
+        let a =parseInt(Math.random() * 90)+10;
+
+        let b = parseInt(a/10);
+        let c =a%10;
+
+        if(b%2==0 && c%2==0){
+            arr.push(a);
+            count++;
+        }
+    }
+
+    document.write(arr);
+   
+
+</script>

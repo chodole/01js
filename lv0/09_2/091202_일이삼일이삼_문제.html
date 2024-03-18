@@ -1,0 +1,32 @@
+<script>
+
+    /*
+        [문제]
+            랜덤(2~10)의 숫자를 저장하고 
+            랜덤 개수만큼 반복을 하면서 "일이삼수열" 를 arr배열에 저장하시오.
+            "일이삼수열" 이란, 1 2 3 1 2 3 1 2 3 을 반복하는 규칙을말한다.
+        [예시1] 
+            r = 8
+            arr = 1,2,3,1,2,3,1,2
+        [예시2] 
+            r = 4
+            arr = 1,2,3,1
+    */
+
+    let arr = [];
+
+    let a = parseInt(Math.random() * 9)+2;
+    let b = 1;
+
+    document.write(a+"<br>");
+
+    for(let i =0;i<a;i++){
+        arr.push(b);
+        if(b==3) b=0;
+        b++;
+    }
+
+    document.write(arr);
+
+
+</script>

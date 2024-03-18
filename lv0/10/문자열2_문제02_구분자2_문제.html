@@ -1,0 +1,27 @@
+<script>
+
+    /*
+        [문제]
+            이름은 name배열에 성적은 score배열에 
+            각각 저장 후 출력하시오.
+        [정답]
+            name = 김철수,이만수,이영희
+            score = 87,42,95
+    */
+
+    let str = "김철수/87,이만수/42,이영희/95";
+    let name = [];
+    let score = [];
+
+    let a = str.split(",");
+
+    for(let i =0;i<a.length;i++){
+        let temp = a[i].split("/");
+        name.push(temp[0]);
+        score.push(temp[1]);
+    }
+
+    document.write(name+"<br>");
+    document.write(score);
+
+</script>

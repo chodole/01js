@@ -1,0 +1,25 @@
+<script>
+
+    /*
+        [문제]
+            [조건1] 18의 약수 중 짝수들만 출력하고, 
+            [조건2] 총합을 출력하시오.
+        [정답]
+            2 6 18 
+            total = 26
+    */
+
+    let i = 1;
+    let total = 0;
+
+    while(i<=18) {
+        if(18%i == 0 && i%2==0){
+            document.write(i+'<br>');
+            total+=i;
+        }
+        i++;
+    }
+
+    document.write("total="+total);
+
+</script>

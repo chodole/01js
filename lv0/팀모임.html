@@ -1,0 +1,60 @@
+<script>
+
+    /*
+        철수가 모두의 마블을 하는데 0부터 50까지 가야 성공이다. 주사위는 하나만 굴린다.
+        보드판 중간에는 15단위씩 함정이 있다. 함정에 걸리면 짝수가 나와야 탈출할 수 있다.
+        철수가 몇번만에 게임을 클리어하는지 출력하시오.
+        30번 이상이면 운이 나쁘다.
+        30에서 15번 사이면 평범하다.
+        15번 이내로 성공하면 운이 좋다라고 출력하시오.
+    */
+
+    let count=0;
+    let i =0;
+    let trap = false;
+    
+    while(true){
+        let r = parseInt(Math.random()*6)+1;
+        document.write("주사위 결과 = "+r+"<br>");
+        count++;
+
+        if(trap == false){
+            i+=r;
+            document.write("철수의 위치 ="+i+"<br>");
+
+            if(i%15 == 0){
+                document.write("함정에 걸렸다.<br>");
+                trap = true;
+            }
+
+        }else {
+            if(r%2==0){
+                document.write("함정에서 탈출했다! <br>");
+
+                i+=r;
+                document.write("철수의 위치 ="+i+"<br>");
+
+                trap=false;
+            } else {
+                document.write("함정에서 탈출하지 못했다..<br>");
+            }
+        }
+    
+        if(i>=50){
+            document.write("<br><br> 게임 끝!! <br><br>");
+            break;
+        }
+
+        document.write("<br><br>");
+    }
+
+    document.write("count = "+count+" => ");
+    if(count>20){
+        document.write("운이 안좋군요");
+    }else if(count>15){
+        document.write("평범하네요");
+    }else {
+        document.write("운이 좋군요");
+    }
+
+</script>

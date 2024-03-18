@@ -1,0 +1,53 @@
+<script>
+
+    /*
+        [문제]
+            [1] arr배열에 랜덤 값(1~100)을 9개 저장 후 출력하시오.
+            [2] 랜덤으로 값 두 개를 선택 후 두 개의 위치를 교환 후 출력하시오.
+        [예시]
+            값 교체 전 >>>
+            [46, 62, 75]
+            [36, 18, 100]
+            [26, 11, 39]
+
+            r1 = 11
+            r2 = 36
+            
+            값 교체 후 >>>
+            [46, 62, 75]
+            [11, 18, 100]
+            [26, 36, 39]    
+    */
+
+    let arr = [
+        [0, 0, 0],
+        [0, 0, 0],
+        [0, 0, 0]
+    ];
+
+    for(let i =0;i<3;i++){
+        for(let j =0;j<3;j++){
+            arr[i][j] = parseInt(Math.random()*100)+1;
+        }
+    }
+
+    for(let i =0;i<3;i++){
+        document.write(arr[i]+"<br>");
+    }
+
+    let x1 = parseInt(Math.random()*3);
+    let y1 = parseInt(Math.random()*3);
+    let x2 = parseInt(Math.random()*3);
+    let y2 = parseInt(Math.random()*3);
+
+    document.write("x1 ="+x1+" y1 ="+y1+" x2 ="+x2+" y2 ="+y2+"<br>");
+
+    let temp = arr[x1][y1];
+    arr[x1][y1] = arr[x2][y2];
+    arr[x2][y2] = temp;
+
+    for(let i =0;i<3;i++){
+        document.write(arr[i]+"<br>");
+    }
+
+</script>

@@ -1,0 +1,60 @@
+<script>
+
+    /*
+        [문제]
+            아래 arr배열은 3명의 학생 데이터이다.		
+            각 학생은 3개씩 데이터로 표현한다. 
+            맨 앞은 번호, 그 다음은 국어점수, 그 다음은 수학점수이다.					
+            1001번, 국어 100, 수학 20
+            1002번, 국어 32,  수학 54
+            1003번  국어 34,  수학 65	
+
+            [1] 전체 평균을 출력하시오. (소수점 두자리까지 출력)
+            [2] 국어 1등 학생 정보를 출력하시오.
+            [3] 수학 1등 학생 정보를 출력하시오.
+            [4] 전체 1등 학생 정보를 출력하시오.
+        [정답]    
+            평균 = 101.67점
+            국어 1등 = 1001번(100점)
+            수학 1등 = 1003번(65점)
+            전체 1등 = 1001번(120점)      
+    */
+
+    let arr = [1001, 100, 20, 1002, 32, 54, 1003, 34, 65];
+
+    let sum=0;
+    let avg = 0;
+    
+    let kor = 0;
+    let korIndex=0;
+    let math = 0;
+    let mathIndex=0;
+    let hole = 0;
+    let holeIndex=0;
+
+    for(let i =0;i<arr.length;i+=3){
+        sum+=arr[i+1]+arr[i+2];
+
+        if(kor<arr[i+1]) {
+            kor = arr[i+1];
+            korIndex = i;
+        }
+        if(math<arr[i+2]){
+            math = arr[i+2];
+            mathIndex=i;
+        }
+        if(hole < arr[i+1]+arr[i+2]){
+            hole = arr[i+1]+arr[i+2];
+            holeIndex = i;
+        }
+    }
+
+    avg = (sum/3).toFixed(2);
+
+    document.write("평균 ="+avg+"<br>");
+    document.write("국어 1등 ="+arr[korIndex]+"번("+kor+"점)<br>");
+    document.write("수학 1등 ="+arr[mathIndex]+"번("+math+"점)<br>");
+    document.write("전체 1등 ="+arr[holeIndex]+"번("+hole+"점)");
+
+
+</script>

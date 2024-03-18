@@ -1,0 +1,38 @@
+<script>
+
+    /*
+        [문제]
+            10000~99999 사이의 랜덤숫자를 저장하고 
+            자리별숫자가 5 이상인 개수를 출력하시오.
+            
+                예) 19200 ==> 9 하나만 5 이상 ==> 1
+                예) 98436 ==> 9,8,6, 세 개가 5 이상 ==> 3    
+    */
+
+    let r = parseInt(Math.random() * 90000)+10000;
+    document.write(r+"  == >");
+
+    let run = true;
+
+    let count = 0;
+    let one = 100000;
+    
+
+    while(run){
+        let a = parseInt(r % one / (one/10));
+
+        if(a>=5){
+            document.write(a+",");
+            count++;
+        }
+
+        one = parseInt(one/10);
+
+        if(one == 1){
+            run = false;
+        }
+    }
+
+    document.write(" => "+count+"개");
+
+</script>

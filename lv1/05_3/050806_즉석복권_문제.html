@@ -1,0 +1,43 @@
+<script>
+
+    /*
+        [문제]
+            랜덤으로 1 또는 7을 10번 출력한다. 
+            7이 연속으로 3번 이상이면 "당첨" 
+            아니면 "꽝"을 출력하시오.
+        [예시]
+            1 1 1 7 7 7 1 1 7 7 
+            당첨
+
+            7 1 1 1 1 7 1 1 7 1 
+            꽝    
+    */
+
+    let count =0;
+    let rs = false;
+
+    for(let i =0;i<10;i++){
+        let r = parseInt(Math.random() * 7)+1;
+
+        if(r == 7){
+            count++;
+
+            if(count == 3){
+                rs = true;
+            }
+        } else {
+            count = 0;
+        }
+        document.write(r+" ");
+   
+    }
+
+    document.write("<br>");
+
+    if(rs){
+        document.write("당첨");
+    }else{
+        document.write("꽝")
+    }
+  
+</script>

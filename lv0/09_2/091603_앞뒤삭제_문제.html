@@ -1,0 +1,36 @@
+<script>
+
+    /*
+        [문제]
+            아래 배열은 어떤 시험의 표본결과이다.
+            표본의 정밀성을 체크하기위해
+            가장큰값과 가장작은값은 삭제한후 출력하시오.
+        [정답]
+
+          
+    */
+
+    let list  = [  87,   11,   45,   98,   23,  34,  56];
+
+    let max = 0;
+    let maxIndex=0;
+    let min = 100;
+    let minIndex=0;
+
+    for(let i =0;i<list.length;i++){
+        if(max<list[i]){
+            max = list[i];
+            maxIndex = i;
+        }
+        if(min>list[i]){
+            min = list[i];
+            minIndex = i;
+        }
+    }
+
+    list.splice(maxIndex,1);
+    list.splice(minIndex,1);
+
+    document.write(list);
+
+</script>

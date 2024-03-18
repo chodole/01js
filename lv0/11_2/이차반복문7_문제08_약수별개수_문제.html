@@ -1,0 +1,64 @@
+<script>
+
+    /*
+        [문제]
+            numberList 의 모든약수들의 개수를 출력하시오.
+        [해설]
+            아래 arr 배열의 값들의 약수를 전부 divisorList 에 저장한다.
+            divisorList 배열의 숫자들을 중복없이 arrList 배열에 한개씩 저장한후,
+            그숫자의 개수를 countList 배열에 저장한다. 
+        [정답]
+            
+    */
+
+    let numberList = [54,3,9,64];
+    let divisorList = [];
+    let arrList = [];
+    let countList = [];
+
+   
+    for(let i=0;i<numberList.length;i++){
+        for(let j=0;j<numberList[i];j++){
+            if(numberList[i]%j==0){
+                divisorList.push(j);
+            }
+        }
+    }
+
+    document.write(divisorList+"<br>");
+
+    for(let i =0;i<divisorList.length;i++){
+        if(arrList.length==0){
+            arrList.push(divisorList[i]);
+            continue;
+        }
+
+        let a = divisorList[i];
+        let count = 0;
+
+        for(let j =0;j<arrList.length;j++){
+            if(arrList[j]==a){
+                count++;
+            }
+        }
+        if(count == 0){
+            arrList.push(a);
+        }
+    }
+
+    for(let i =0;i<arrList.length;i++){
+        let count=0;
+        for(let j =0;j<divisorList.length;j++){
+            if(arrList[i]==divisorList[j]){
+                count++;
+            }
+        }
+        countList.push(count);
+    }
+
+    document.write(arrList+"<br>");
+    document.write(countList);
+    
+
+
+</script>

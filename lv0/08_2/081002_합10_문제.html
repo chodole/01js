@@ -1,0 +1,28 @@
+<script>
+
+    /*
+        [문제]
+            1~9 사이의 랜덤 숫자 2개를 저장하고
+            그 숫자의 합이 무조건 10이 되도록 출력하시오.
+        [예시]
+            x = 9
+            y = 1    
+    */
+
+    let run = true;
+    let sum = 0;
+
+    while(run){
+        let a =parseInt(Math.random() * 9)+1;
+        let b =parseInt(Math.random() * 9)+1;
+
+        sum = a+b;
+
+        if(sum==10){
+            document.write (a+"+"+b);
+            run = false;
+        }
+    
+    }
+
+</script>
