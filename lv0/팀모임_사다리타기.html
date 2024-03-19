@@ -1,7 +1,11 @@
 <script>
     /*
-        핀볼게임
-    
+        철수는 핀볼게임을 하려고 한다.
+        철수는 기본자금 만원을 가지고 딱 한판으로 승부를 내려고 한다.
+        구슬이 튕겨서 맨 아래있는 상자로 들어가면 상자에 써있는 배수에 따라 돈을 얻을 수 있다.
+        철수가 얻게될 금액은 얼마일지 출력하시오.
+        * 구슬의 시작위치는 랜덤으로 정해진다.[0~3]
+        * 떨어지는 구슬의 방향은 2차배열 안의 숫자에 따라 바뀐다 (-1 : 왼쪽, 0: 그대로, 1: 오른쪽)
     */
 
     function ladderPrint(ladder,x,y,number,result){
@@ -26,57 +30,81 @@
                 if(x==i){
                     document.write(" [ &nbsp;●&nbsp; ] ");
                 }else{
-                    document.write(" ["+result[i]+"] ");
+                    document.write(" [ &nbsp;"+result[i]+" &nbsp;] ");
                 }
             }
         }else{
             for(let i=0;i<result.length;i++){
-                document.write(" ["+result[i]+"] ");
+                document.write(" [ &nbsp;"+result[i]+" &nbsp;] ");
             }
         }
         
         document.write("<br><br>");
     }
 
+    let money = 10000;
     let number = [1,2,3,4];
-    let result = ["만원","이만원","오천원","빵원"];
-    let ladder = [];
+    let result = ["X3","X1","X2","X0"];
+    let ladder = [
+                    [0,0,0,0],
+                    [0,0,0,0],
+                    [0,0,0,0],
+                    [0,0,0,0]
+                 ];
 
 
     //게임판 세팅
     for(let i=0;i<4;i++){
-        let temp = [];
         for(let j=0;j<4;j++){
             let ran = parseInt(Math.random()*3)-1;
             if(j==0) ran = parseInt(Math.random()*2);
             if(j==3) ran = parseInt(Math.random()*2)-1;
-            temp.push(ran);
+            ladder[i][j]=ran;
         }
-        ladder.push(temp);
     }
 
     //게임 시작
-    for(let i=0;i<number.length;i++){
-        let x = i;
-        let y = 0;
+    for(let i=0;i<ladder.length;i++){
+        document.write(ladder[i]+"<br>");
+    }
+    document.write("<br>");
+    
+    let x = parseInt(Math.random()*4);
+    let y = 0;
+    
+    document.write("시작 금액 : 10000원<br>");
+    document.write((x+1)+"위치에서 시작<br><br>");
 
-        document.write(number[i]+" 시작 <br>");
+    ladderPrint(ladder,x,y,number,result);
+
+    while(true){
+        if(ladder[y][x]==-1){
+            x--;
+        }else if(ladder[y][x]==1){
+            x++;
+        }
+        y++;
+
         ladderPrint(ladder,x,y,number,result);
 
-        while(true){
-            if(ladder[y][x]==-1){
-                x--;
-            }else if(ladder[y][x]==1){
-                x++;
-            }
-            y++;
-
-            ladderPrint(ladder,x,y,number,result);
-
-            if(y==ladder.length) break; 
-        }
-
-        document.write(number[i]+"는 "+result[x]+"을 내야한다<br><br><hr>");
+        if(y==ladder.length) break; 
     }
+
+    if(x==0){
+        money = money*3;
+    }else if(x==1){
+        money = money*1;
+    }else if(x==2){
+        money = money*2;
+    }else if(x==3){
+        money = money*0;
+    }
+
+    if(money == 0){
+        document.write("다 잃었다!");
+    }else{
+        document.write(money+"원을 얻었다<br><br>");
+    }
+    
 
 </script>
